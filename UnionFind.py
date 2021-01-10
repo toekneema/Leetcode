@@ -1,3 +1,18 @@
+short but no compression or sizes
+class UnionFind:
+    
+    def __init__(self, n): 
+        self.root = list(range(n))
+    
+    def union(self, x, y): 
+        self.root[self.find(x)] = self.find(y)
+    
+    def find(self, x):
+        if x != self.root[x]: 
+            self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+long and comprehensive/optimized version
 class UnionFind:
     '''           
     graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]
@@ -35,8 +50,7 @@ class UnionFind:
             nextTarget = self.parents[target]
             self.parents[target] = parent
             target = nextTarget
-            
-    
+
         return parent
         
         
