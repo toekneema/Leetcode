@@ -30,10 +30,12 @@ class UnionFind:
             #           1
             #           ^
             #       4 < 0 > 3  this way it is amortizing the time to find the parent node for the future
-            
+        
         while target != parent:
-            target = self.parents[target]
+            nextTarget = self.parents[target]
             self.parents[target] = parent
+            target = nextTarget
+            
     
         return parent
         
