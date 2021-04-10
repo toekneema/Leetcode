@@ -7,6 +7,8 @@ for s,t,r in zip(sources,targets,rates):
     allCurrs.add(s)
     allCurrs.add(t)
 
+# usually i would initialize these as inf, and the source as 0.
+# but for this variation of Best Currency Path (bsio) I need to find the MAX exchange rate and products start at 1
 bestAmts = {curr : float('-inf') for curr in allCurrs}
 bestAmts[source] = 1
         
